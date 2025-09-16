@@ -1,0 +1,23 @@
+name: Run build
+
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+        branches:
+            - master
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 22
+            - run: |
+                  sudo bash -c "mkdir /alacran && chown -R `whoami` /alacran"
+                  npm ci 
+                  npm run build 
+                  npm run test
