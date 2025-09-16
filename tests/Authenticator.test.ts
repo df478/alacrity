@@ -9,7 +9,7 @@ test('Testing Authenticator 1', () => {
 
     let hashed = bcrypt.hashSync(HASH + passwordStored, bcrypt.genSaltSync(10))
 
-    hashed = '$2a$10$9pEXSGfCSiz/ZC49ucqHuOCiuCy2dK17uqQtXn8BQfx2jt8cYFA9K'
+    hashed = '$2b$10$PNeu8L8FUx63scfBYBePwO9yOWQ55Os1Jg9INMsIFZ/CWF5AIqdcK'
 
     expect(
         bcrypt.compareSync(
