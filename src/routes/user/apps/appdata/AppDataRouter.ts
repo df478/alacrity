@@ -84,16 +84,6 @@ router.post(
         const gitHash = (req.body.gitHash || '') + ''
         const tarballSourceFilePath: string = req.file ? req.file.path : ''
 
-        if (!!tarballSourceFilePath === !!alacranDefinitionContent) {
-            res.send(
-                new BaseApi(
-                    ApiStatusCodes.ILLEGAL_OPERATION,
-                    'Either tarballfile or alacranDefinitionContent should be present.'
-                )
-            )
-            return
-        }
-
         return Promise.resolve().then(function () {
             const promiseToDeployNewVer =
                 serviceManager.scheduleDeployNewVersion(appName, {
