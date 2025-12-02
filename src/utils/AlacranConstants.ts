@@ -57,7 +57,6 @@ const configs = {
 
     certbotCertCommandRules: undefined as CertbotCertCommandRule[] | undefined,
 
-    // this is added in 1.13 just as a safety - remove this after 1.14
     disableEncryptedCheck: false,
 
     // The port can be overridden via env variable ALACRAN_HOST_HTTP_PORT

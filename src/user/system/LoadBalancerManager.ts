@@ -216,7 +216,6 @@ class LoadBalancerManager {
                 // nginx:1.24
                 // Failed example:
                 //
-                // 2024/08/11 22:32:59 [emerg] 28#28: unknown directive "eventsxxx" in /etc/nginx/nginx.conf:8
                 // nginx: [emerg] unknown directive "eventsxxx" in /etc/nginx/nginx.conf:8
                 // nginx: configuration file /etc/nginx/nginx.conf test failed
 
@@ -413,7 +412,7 @@ class LoadBalancerManager {
 
     // Parses out the app and domain name from the log path original constructed in getLogPath
     // then updated when processing the logs into file names that have timestamps that look like
-    // appname--some-alias.localhost--access.log--2024-10-30T01:50.html
+    // appname--some-alias.localhost--access.log--2025-10-30T01:50.html
     // or appname--speed4.alacran.localhost--access.log--Current.html
     parseLogPath(logPath: string): { domainName: string; fileName: string } {
         const splitName = logPath.split('--')

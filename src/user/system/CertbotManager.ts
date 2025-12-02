@@ -120,10 +120,6 @@ class CertbotManager {
 
         return Promise.resolve()
             .then(function () {
-                // Creds used to be saved at
-                // /etc/letencrypt/accounts/acme-v01.api.letsencrypt.org/directory/9fc95dbca2f0b877
-                // After moving to 0.29.1, Certbot started using v2 API. and this path is no longer valid.
-                // Instead, they use v02 path. However, old installations who registered with v1, will remain in the same directory
                 const cmd = [
                     'certbot',
                     'register',
@@ -164,27 +160,22 @@ class CertbotManager {
     /*
   Certificate Name: customdomain-another.hm2.alacrity.com
     Domains: customdomain-another.hm2.alacrity.com
-    Expiry Date: 2019-03-22 04:22:55+00:00 (VALID: 81 days)
     Certificate Path: /etc/letsencrypt/live/customdomain-another.hm2.alacrity.com/fullchain.pem
     Private Key Path: /etc/letsencrypt/live/customdomain-another.hm2.alacrity.com/privkey.pem
   Certificate Name: testing.cp.hm.alacrity.com
     Domains: testing.cp.hm.alacrity.com
-    Expiry Date: 2019-03-21 18:42:17+00:00 (VALID: 81 days)
     Certificate Path: /etc/letsencrypt/live/testing.cp.hm.alacrity.com/fullchain.pem
     Private Key Path: /etc/letsencrypt/live/testing.cp.hm.alacrity.com/privkey.pem
   Certificate Name: registry.cp.hm.alacrity.com
     Domains: registry.cp.hm.alacrity.com
-    Expiry Date: 2019-03-25 04:56:45+00:00 (VALID: 84 days)
     Certificate Path: /etc/letsencrypt/live/registry.cp.hm.alacrity.com/fullchain.pem
     Private Key Path: /etc/letsencrypt/live/registry.cp.hm.alacrity.com/privkey.pem
   Certificate Name: alacran.cp.hm.alacrity.com
     Domains: alacran.cp.hm.alacrity.com
-    Expiry Date: 2019-03-20 22:25:50+00:00 (VALID: 80 days)
     Certificate Path: /etc/letsencrypt/live/alacran.cp.hm.alacrity.com/fullchain.pem
     Private Key Path: /etc/letsencrypt/live/alacran.cp.hm.alacrity.com/privkey.pem
   Certificate Name: testing2.cp.hm.alacrity.com
     Domains: testing2.cp.hm.alacrity.com
-    Expiry Date: 2019-03-21 18:42:55+00:00 (VALID: 81 days)
     Certificate Path: /etc/letsencrypt/live/testing2.cp.hm.alacrity.com/fullchain.pem
     Private Key Path: /etc/letsencrypt/live/testing2.cp.hm.alacrity.com/privkey.pem
 
